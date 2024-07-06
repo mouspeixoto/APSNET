@@ -10,4 +10,9 @@
     <PackageReference Include="MySqlConnector" Version="2.3.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\APSNET.Dominio\APSNET.Dominio.csproj" />
+    <ProjectReference Include="..\APSNET.Tools\APSNET.Tools.csproj" />
+  </ItemGroup>
+
 </Project>

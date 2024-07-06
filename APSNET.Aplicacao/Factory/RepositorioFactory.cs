@@ -1,4 +1,7 @@
-﻿using System;
+﻿using APSNET.Dominio.Configuracoes;
+using APSNET.Repositorio.Configuracoes;
+using APSNET.Repositorio;
+using System;
 
 namespace APSNET.Aplicacao.Factory
 {
@@ -15,5 +18,23 @@ namespace APSNET.Aplicacao.Factory
 
             return retorno;
         }
+
+        #region Configuracoes
+
+
+        public static IRepositorio<Configuracao> ConfiguracaoRepositorio()
+        {
+            switch (RepositorioFactory.GetTypeRepository())
+            {
+                case "MySQL":
+                    return new ConfiguracaoRepositorio();
+
+                default:
+                    return new ConfiguracaoRepositorio();
+            }
+        }
+
+        #endregion
+
     }
 }
